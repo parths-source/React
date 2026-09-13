@@ -1,6 +1,23 @@
 body {
   background-color: black,
 }
+.parent{
+  flex-wrap: wrap;
+}
+.card{
+  background-color: rgb(62, 60, 60);
+  color:black;
+  height:200px;
+  width: 170px;
+  padding:10px;
+  border-radius: 10px;
+  text-align: center;
 
+}
+.card img{
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
 
 
