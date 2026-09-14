@@ -1,45 +1,29 @@
-import Card from "./componenets/Card";
-const companies = [
+import React from 'react'
+import Section1 from './componenets/section 1/Section1'
+import Section2 from './componenets/section 2/section2'
+
+const users = [
   {
-    companyName: "Google",
-    work: "Software Development",
-    role: "Software Engineer",
-    salary: 2500000
+    img:"https://images.unsplash.com/photo-1788721739597-0fad3ddc7f13?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
-    companyName: "Microsoft",
-    work: "Cloud & Software",
-    role: "SDE",
-    salary: 2200000
+    img:"https://images.unsplash.com/photo-1786709287840-d6de3883ef1f?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
-    companyName: "Amazon",
-    work: "E-commerce & Cloud",
-    role: "Software Development Engineer",
-    salary: 2000000
+    img:"https://images.unsplash.com/photo-1789009666152-ac554305c90b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
-    companyName: "TCS",
-    work: "IT Services",
-    role: "Software Engineer",
-    salary: 700000
-  },
-  {
-    companyName: "Infosys",
-    work: "IT Services",
-    role: "Systems Engineer",
-    salary: 600000
+    img:"https://images.unsplash.com/photo-1788270083262-55c5df22ed45?q=80&w=678&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
-];
-function App(){
+]
+const App = () => {
   return (
-    <div className="parent">
-      {companies.map(function(elem){
-        return <Card name={elem.companyName} work={elem.work} role={elem.role} salary={elem.salary} />
-      })}
+    <div>
+      <Section1 user={users}/>
+      <Section2/>
     </div>
   )
 }
 
+export default App
 
-export default App;
