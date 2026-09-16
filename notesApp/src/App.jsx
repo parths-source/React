@@ -1,6 +1,7 @@
 import React,{useState}from 'react'
 
 const App = () => {
+  
   const [obj, setobj] = useState({title:"" ,note:""})
   const notes=(elem)=>{
     elem.preventDefault();
