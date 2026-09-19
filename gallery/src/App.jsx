@@ -1,9 +1,12 @@
 import axios from 'axios'
 import { useState,useEffect } from 'react'
+import { ThemeContext } from './Theme';
+import { useContext } from 'react';
 
 const App = () => {
   const [User, setUser] = useState([]);
   const [idx, setidx] = useState(1)
+  const [Th,setTh]=useContext(ThemeContext)
   const getData=async()=>{
     const res=await axios.get(`https://picsum.photos/v2/list?page=${idx}&limit=15`);
     setUser(res.data);
@@ -17,12 +20,16 @@ const App = () => {
   if(User.length>0) {
     userData=User.map(function(elem){
       return(
-        <div className="">
+        <div className={Th}>
           <img className="h-50 w-50 rounded-xl" src={elem.download_url} alt=""/>
           <h2 className="text-white font-bold">{elem.author}</h2>
         </div>
       )
     })
+  }
+  const btnclick=async()=>{
+    await setTh("black");
+    console.log(Th);
   }
 
   return (
@@ -39,6 +46,7 @@ const App = () => {
           setidx(idx+1);
         }} className='bg-yellow-400 text-black-200 p-2 rounded-lg '>next</button>
       </div>
+      <button onClick={btnclick}> ChangeTheme</button>
     </div>
   )
 }
